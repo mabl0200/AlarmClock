@@ -43,6 +43,9 @@
             this.Hours = new System.Windows.Forms.Label();
             this.Minutes = new System.Windows.Forms.Label();
             this.SetClock = new System.Windows.Forms.Button();
+            this.WeekdayChBx = new System.Windows.Forms.CheckBox();
+            this.WeekendsChBx = new System.Windows.Forms.CheckBox();
+            this.DayOfWeek = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ClockHourUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClockMinuteUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AlarmHourUpDown)).BeginInit();
@@ -191,11 +194,45 @@
             this.SetClock.UseVisualStyleBackColor = true;
             this.SetClock.Click += new System.EventHandler(this.SetClock_Click);
             // 
+            // WeekdayChBx
+            // 
+            this.WeekdayChBx.AutoSize = true;
+            this.WeekdayChBx.Location = new System.Drawing.Point(639, 89);
+            this.WeekdayChBx.Name = "WeekdayChBx";
+            this.WeekdayChBx.Size = new System.Drawing.Size(79, 19);
+            this.WeekdayChBx.TabIndex = 17;
+            this.WeekdayChBx.Text = "Weekdays";
+            this.WeekdayChBx.UseVisualStyleBackColor = true;
+            this.WeekdayChBx.CheckedChanged += new System.EventHandler(this.WeekdayChBx_CheckedChanged);
+            // 
+            // WeekendsChBx
+            // 
+            this.WeekendsChBx.AutoSize = true;
+            this.WeekendsChBx.Location = new System.Drawing.Point(638, 117);
+            this.WeekendsChBx.Name = "WeekendsChBx";
+            this.WeekendsChBx.Size = new System.Drawing.Size(80, 19);
+            this.WeekendsChBx.TabIndex = 18;
+            this.WeekendsChBx.Text = "Weekends";
+            this.WeekendsChBx.UseVisualStyleBackColor = true;
+            this.WeekendsChBx.CheckedChanged += new System.EventHandler(this.WeekendsChBx_CheckedChanged);
+            // 
+            // DayOfWeek
+            // 
+            this.DayOfWeek.AutoSize = true;
+            this.DayOfWeek.Location = new System.Drawing.Point(302, 123);
+            this.DayOfWeek.Name = "DayOfWeek";
+            this.DayOfWeek.Size = new System.Drawing.Size(69, 15);
+            this.DayOfWeek.TabIndex = 19;
+            this.DayOfWeek.Text = "DayOfWeek";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DayOfWeek);
+            this.Controls.Add(this.WeekendsChBx);
+            this.Controls.Add(this.WeekdayChBx);
             this.Controls.Add(this.SetClock);
             this.Controls.Add(this.Minutes);
             this.Controls.Add(this.Hours);
@@ -235,5 +272,8 @@
         private Label Hours;
         private Label Minutes;
         private Button SetClock;
+        private CheckBox WeekdayChBx;
+        private CheckBox WeekendsChBx;
+        private Label DayOfWeek;
     }
 }

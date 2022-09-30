@@ -7,20 +7,22 @@ namespace AlarmClock
             InitializeComponent();
             Alarm.Visible = false;
             SnzBtn.Visible = false;
-
             timer1.Start();
         }
         Time time = new Time();
-        
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             time.ClockTime = DateTime.Now;
+            DayOfWeek.Text = time.ClockTime.DayOfWeek.ToString();
             ShowClockTIme.Text = time.ClockTime.ToString("HH:mm");
             ShowAlarmTime.Text = time.AlarmTime.ToString("HH:mm");
             TimeLbl.Text = time.ClockTime.ToString("HH:mm:ss");
+            time.ClockTime.DayOfWeek.ToString();
+
             if (time.ClockTime.Hour == time.AlarmTime.Hour && time.ClockTime.Minute == time.AlarmTime.Minute && time.ClockTime.Second == time.AlarmTime.Second)
             {
-                Alarm.Text = time.StartTheAlarm();
+                Alarm.Text = time.StartTheAlarm(time);
                 Alarm.Visible=true;
                 SnzBtn.Visible=true;
             }
@@ -100,6 +102,37 @@ namespace AlarmClock
             SnzBtn.Visible = false;
         }
 
+        private void WeekdayChBx_CheckedChanged(object sender, EventArgs e)
+        {
+            if (WeekdayChBx.Checked == true)
+            {
+                WeekendsChBx.Enabled = false;
+            }
+            if (WeekdayChBx.Checked == false)
+            {
+                WeekendsChBx.Enabled = true;
+            }
+            
+            time.Weekdays = true;
+            time.SetDays(time);
+        }
 
+        private void WeekendsChBx_CheckedChanged(object sender, EventArgs e)
+        {
+            if (WeekendsChBx.Checked == true)
+            {
+                WeekdayChBx.Enabled = false;
+                time.Weekends = true;
+                time.SetDays(time);
+            }
+            if (WeekendsChBx.Checked == false)
+            {
+                WeekdayChBx.Enabled = true;
+                time.Weekends = false;
+                time.SetDays(time);
+            }
+            //time.Weekends = true;
+            //time.SetDays(time);
+        }
     }
 }
