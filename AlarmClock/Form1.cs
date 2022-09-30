@@ -14,7 +14,6 @@ namespace AlarmClock
         
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
             time.ClockTime = DateTime.Now;
             ShowClockTIme.Text = time.ClockTime.ToString("HH:mm");
             ShowAlarmTime.Text = time.AlarmTime.ToString("HH:mm");
@@ -27,19 +26,7 @@ namespace AlarmClock
             }
         }
 
-        private void SnzBtn_Click(object sender, EventArgs e)
-        {
-            Alarm.Visible = false;
-            time.Snooze(time.ClockTime);
-            SnzBtn.Visible = false;
-        }
-
-        private void SetAlarm_Click(object sender, EventArgs e)
-        {
-            DateTime alarm = new DateTime(2022, 09, 29, (int)AlarmHourUpDown.Value, (int)AlarmMinuteUpDown.Value, 0);
-            time.SetAlarm(alarm);
-        }
-
+        //Kan nog tas bort så kör vi på DateTime.Now
         private void ClockHourUpDown_ValueChanged(object sender, EventArgs e)
         {
             try
@@ -52,7 +39,7 @@ namespace AlarmClock
                 throw;
             }
         }
-
+        //Kan nog tas bort så kör vi på DateTime.Now
         private void ClockMinuteUpDown1_ValueChanged(object sender, EventArgs e)
         {
             try
@@ -64,6 +51,15 @@ namespace AlarmClock
                 throw;
             }
         }
+        //Kan nog tas bort så kör vi på DateTime.Now
+        private void SetClock_Click(object sender, EventArgs e)
+        {
+            DateTime clock = new DateTime(2022, 09, 29, (int)ClockHourUpDown.Value, (int)ClockMinuteUpDown1.Value, 0);
+            time.SetClock(clock);
+            timer1.Start();
+            timer1.Enabled = true;
+        }
+        //Ta in input från användaren, Alarmtid Hour
         private void AlarmHourUpDown_ValueChanged(object sender, EventArgs e)
         {
             try
@@ -76,7 +72,7 @@ namespace AlarmClock
                 throw;
             }
         }
-
+        //Ta in input från användaren, Alarmtid Minute
         private void AlarmMinuteUpDown_ValueChanged(object sender, EventArgs e)
         {
             try
@@ -89,13 +85,21 @@ namespace AlarmClock
                 throw;
             }
         }
-
-        private void SetClock_Click(object sender, EventArgs e)
+        //Sätter Alarmtid med värden från användaren, kallar på metod i Time-klassen
+        private void SetAlarm_Click(object sender, EventArgs e)
         {
-            DateTime clock = new DateTime(2022, 09, 29, (int)ClockHourUpDown.Value, (int)ClockMinuteUpDown1.Value, 0);
-            time.SetClock(clock);
-            timer1.Start();
-            timer1.Enabled = true;
+            DateTime alarm = new DateTime(2022, 09, 29, (int)AlarmHourUpDown.Value, (int)AlarmMinuteUpDown.Value, 0);
+            time.SetAlarm(alarm);
         }
+
+        //Sätter en ny Alarmtid, kallar på metod i Time-klassen
+        private void SnzBtn_Click(object sender, EventArgs e)
+        {
+            Alarm.Visible = false;
+            time.Snooze(time.ClockTime);
+            SnzBtn.Visible = false;
+        }
+
+
     }
 }
