@@ -33,21 +33,15 @@
             this.TimeLbl = new System.Windows.Forms.Label();
             this.SnzBtn = new System.Windows.Forms.Button();
             this.Alarm = new System.Windows.Forms.Label();
-            this.ShowClockTIme = new System.Windows.Forms.Label();
             this.ShowAlarmTime = new System.Windows.Forms.Label();
             this.SetAlarm = new System.Windows.Forms.Button();
-            this.ClockHourUpDown = new System.Windows.Forms.NumericUpDown();
-            this.ClockMinuteUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.AlarmHourUpDown = new System.Windows.Forms.NumericUpDown();
             this.AlarmMinuteUpDown = new System.Windows.Forms.NumericUpDown();
             this.Hours = new System.Windows.Forms.Label();
             this.Minutes = new System.Windows.Forms.Label();
-            this.SetClock = new System.Windows.Forms.Button();
             this.WeekdayChBx = new System.Windows.Forms.CheckBox();
             this.WeekendsChBx = new System.Windows.Forms.CheckBox();
             this.DayOfWeek = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.ClockHourUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClockMinuteUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AlarmHourUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AlarmMinuteUpDown)).BeginInit();
             this.SuspendLayout();
@@ -86,19 +80,10 @@
             this.Alarm.TabIndex = 6;
             this.Alarm.Text = "Wake Up";
             // 
-            // ShowClockTIme
-            // 
-            this.ShowClockTIme.AutoSize = true;
-            this.ShowClockTIme.Location = new System.Drawing.Point(29, 38);
-            this.ShowClockTIme.Name = "ShowClockTIme";
-            this.ShowClockTIme.Size = new System.Drawing.Size(63, 15);
-            this.ShowClockTIme.TabIndex = 7;
-            this.ShowClockTIme.Text = "ClockTime";
-            // 
             // ShowAlarmTime
             // 
             this.ShowAlarmTime.AutoSize = true;
-            this.ShowAlarmTime.Location = new System.Drawing.Point(29, 71);
+            this.ShowAlarmTime.Location = new System.Drawing.Point(30, 35);
             this.ShowAlarmTime.Name = "ShowAlarmTime";
             this.ShowAlarmTime.Size = new System.Drawing.Size(65, 15);
             this.ShowAlarmTime.TabIndex = 8;
@@ -106,7 +91,7 @@
             // 
             // SetAlarm
             // 
-            this.SetAlarm.Location = new System.Drawing.Point(536, 86);
+            this.SetAlarm.Location = new System.Drawing.Point(420, 36);
             this.SetAlarm.Name = "SetAlarm";
             this.SetAlarm.Size = new System.Drawing.Size(75, 23);
             this.SetAlarm.TabIndex = 9;
@@ -114,35 +99,9 @@
             this.SetAlarm.UseVisualStyleBackColor = true;
             this.SetAlarm.Click += new System.EventHandler(this.SetAlarm_Click);
             // 
-            // ClockHourUpDown
-            // 
-            this.ClockHourUpDown.Location = new System.Drawing.Point(232, 38);
-            this.ClockHourUpDown.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.ClockHourUpDown.Name = "ClockHourUpDown";
-            this.ClockHourUpDown.Size = new System.Drawing.Size(120, 23);
-            this.ClockHourUpDown.TabIndex = 10;
-            this.ClockHourUpDown.ValueChanged += new System.EventHandler(this.ClockHourUpDown_ValueChanged);
-            // 
-            // ClockMinuteUpDown1
-            // 
-            this.ClockMinuteUpDown1.Location = new System.Drawing.Point(378, 36);
-            this.ClockMinuteUpDown1.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.ClockMinuteUpDown1.Name = "ClockMinuteUpDown1";
-            this.ClockMinuteUpDown1.Size = new System.Drawing.Size(120, 23);
-            this.ClockMinuteUpDown1.TabIndex = 11;
-            this.ClockMinuteUpDown1.ValueChanged += new System.EventHandler(this.ClockMinuteUpDown1_ValueChanged);
-            // 
             // AlarmHourUpDown
             // 
-            this.AlarmHourUpDown.Location = new System.Drawing.Point(232, 86);
+            this.AlarmHourUpDown.Location = new System.Drawing.Point(282, 36);
             this.AlarmHourUpDown.Maximum = new decimal(new int[] {
             23,
             0,
@@ -155,7 +114,7 @@
             // 
             // AlarmMinuteUpDown
             // 
-            this.AlarmMinuteUpDown.Location = new System.Drawing.Point(378, 86);
+            this.AlarmMinuteUpDown.Location = new System.Drawing.Point(282, 65);
             this.AlarmMinuteUpDown.Maximum = new decimal(new int[] {
             59,
             0,
@@ -169,7 +128,7 @@
             // Hours
             // 
             this.Hours.AutoSize = true;
-            this.Hours.Location = new System.Drawing.Point(231, 12);
+            this.Hours.Location = new System.Drawing.Point(226, 36);
             this.Hours.Name = "Hours";
             this.Hours.Size = new System.Drawing.Size(39, 15);
             this.Hours.TabIndex = 14;
@@ -178,26 +137,16 @@
             // Minutes
             // 
             this.Minutes.AutoSize = true;
-            this.Minutes.Location = new System.Drawing.Point(377, 11);
+            this.Minutes.Location = new System.Drawing.Point(226, 67);
             this.Minutes.Name = "Minutes";
             this.Minutes.Size = new System.Drawing.Size(50, 15);
             this.Minutes.TabIndex = 15;
             this.Minutes.Text = "Minutes";
             // 
-            // SetClock
-            // 
-            this.SetClock.Location = new System.Drawing.Point(535, 38);
-            this.SetClock.Name = "SetClock";
-            this.SetClock.Size = new System.Drawing.Size(75, 23);
-            this.SetClock.TabIndex = 16;
-            this.SetClock.Text = "Set Clock";
-            this.SetClock.UseVisualStyleBackColor = true;
-            this.SetClock.Click += new System.EventHandler(this.SetClock_Click);
-            // 
             // WeekdayChBx
             // 
             this.WeekdayChBx.AutoSize = true;
-            this.WeekdayChBx.Location = new System.Drawing.Point(639, 89);
+            this.WeekdayChBx.Location = new System.Drawing.Point(511, 35);
             this.WeekdayChBx.Name = "WeekdayChBx";
             this.WeekdayChBx.Size = new System.Drawing.Size(79, 19);
             this.WeekdayChBx.TabIndex = 17;
@@ -208,7 +157,7 @@
             // WeekendsChBx
             // 
             this.WeekendsChBx.AutoSize = true;
-            this.WeekendsChBx.Location = new System.Drawing.Point(638, 117);
+            this.WeekendsChBx.Location = new System.Drawing.Point(510, 67);
             this.WeekendsChBx.Name = "WeekendsChBx";
             this.WeekendsChBx.Size = new System.Drawing.Size(80, 19);
             this.WeekendsChBx.TabIndex = 18;
@@ -233,23 +182,17 @@
             this.Controls.Add(this.DayOfWeek);
             this.Controls.Add(this.WeekendsChBx);
             this.Controls.Add(this.WeekdayChBx);
-            this.Controls.Add(this.SetClock);
             this.Controls.Add(this.Minutes);
             this.Controls.Add(this.Hours);
             this.Controls.Add(this.AlarmMinuteUpDown);
             this.Controls.Add(this.AlarmHourUpDown);
-            this.Controls.Add(this.ClockMinuteUpDown1);
-            this.Controls.Add(this.ClockHourUpDown);
             this.Controls.Add(this.SetAlarm);
             this.Controls.Add(this.ShowAlarmTime);
-            this.Controls.Add(this.ShowClockTIme);
             this.Controls.Add(this.Alarm);
             this.Controls.Add(this.SnzBtn);
             this.Controls.Add(this.TimeLbl);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.ClockHourUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClockMinuteUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AlarmHourUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AlarmMinuteUpDown)).EndInit();
             this.ResumeLayout(false);
@@ -262,16 +205,12 @@
         private Label TimeLbl;
         private Button SnzBtn;
         private Label Alarm;
-        private Label ShowClockTIme;
         private Label ShowAlarmTime;
         private Button SetAlarm;
-        private NumericUpDown ClockHourUpDown;
-        private NumericUpDown ClockMinuteUpDown1;
         private NumericUpDown AlarmHourUpDown;
         private NumericUpDown AlarmMinuteUpDown;
         private Label Hours;
         private Label Minutes;
-        private Button SetClock;
         private CheckBox WeekdayChBx;
         private CheckBox WeekendsChBx;
         private Label DayOfWeek;

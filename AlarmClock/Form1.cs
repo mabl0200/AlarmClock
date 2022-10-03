@@ -16,7 +16,6 @@ namespace AlarmClock
         {
             time.ClockTime = DateTime.Now;
             DayOfWeek.Text = time.ClockTime.DayOfWeek.ToString();
-            ShowClockTIme.Text = time.ClockTime.ToString("HH:mm");
             ShowAlarmTime.Text = time.AlarmTime.ToString("HH:mm");
             TimeLbl.Text = time.ClockTime.ToString("HH:mm:ss");
             time.ClockTime.DayOfWeek.ToString();
@@ -30,40 +29,7 @@ namespace AlarmClock
             }
             
         }
-
-        //Kan nog tas bort så kör vi på DateTime.Now
-        private void ClockHourUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                var timeInput = ClockHourUpDown.Value;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-        //Kan nog tas bort så kör vi på DateTime.Now
-        private void ClockMinuteUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                var timeInput = ClockMinuteUpDown1.Value;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        //Kan nog tas bort så kör vi på DateTime.Now
-        private void SetClock_Click(object sender, EventArgs e)
-        {
-            DateTime clock = new DateTime(2022, 09, 29, (int)ClockHourUpDown.Value, (int)ClockMinuteUpDown1.Value, 0);
-            time.SetClock(clock);
-            timer1.Start();
-            timer1.Enabled = true;
-        }
+        
         //Ta in input från användaren, Alarmtid Hour
         private void AlarmHourUpDown_ValueChanged(object sender, EventArgs e)
         {
