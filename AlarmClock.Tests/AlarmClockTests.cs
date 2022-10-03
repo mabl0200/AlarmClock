@@ -4,6 +4,7 @@ using System;
 
 namespace AlarmClock.Tests
 {
+    [TestFixture]
     public class Tests
     {
         private Time _time;
