@@ -23,5 +23,27 @@ namespace AlarmClock.Tests
             DateTime snzTime = new DateTime(2022, 09, 29, 12, 46, 0);
             Assert.That(_time.AlarmTime, Is.EqualTo(snzTime));
         }
+
+        [Test]
+        public void CheckSchedueldAlarmOnWeekdays()
+        {
+            _time.ClockTime = new DateTime(2022, 10, 03, 07, 0, 0);
+            _time.AlarmTime = new DateTime(2022, 10, 03, 07, 0, 0);
+            _time.Weekdays = true;
+            _time.Weekends = false;
+            bool startAlarm = _time.CheckTime(_time);
+            Assert.That(startAlarm, Is.True);
+        }
+        [Test]
+        public void CheckSchedueldAlarmOnWeekends()
+        {
+            _time.ClockTime = new DateTime(2022, 10, 01, 08, 0, 0);
+            _time.AlarmTime = new DateTime(2022, 10, 01, 08, 0, 0);
+            _time.Weekdays = false;
+            _time.Weekends = true;
+            bool startAlarm = _time.CheckTime(_time);
+            Assert.That(startAlarm, Is.True);
+        }
+
     }
 }

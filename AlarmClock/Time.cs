@@ -22,13 +22,53 @@ namespace AlarmClock
             ClockTime = clock;
             AlarmTime = alarm;
         }
-        public string StartTheAlarm(Time time)
+        public bool CheckTime(Time time)
         {
             if (time.Weekdays == false && time.Weekends == false)
             {
-                return "";
+                if (time.ClockTime.Hour == time.AlarmTime.Hour && time.ClockTime.Minute == time.AlarmTime.Minute && time.ClockTime.Second == time.AlarmTime.Second)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else if (time.Weekdays == true || time.Weekends == true)
+            else if (time.Weekdays == true && time.ClockTime.Hour == time.AlarmTime.Hour && time.ClockTime.Minute == time.AlarmTime.Minute && time.ClockTime.Second == time.AlarmTime.Second)
+            {
+                if (time.ClockTime.DayOfWeek == DayOfWeek.Monday ||
+                    time.ClockTime.DayOfWeek == DayOfWeek.Tuesday ||
+                    time.ClockTime.DayOfWeek == DayOfWeek.Wednesday ||
+                    time.ClockTime.DayOfWeek == DayOfWeek.Thursday ||
+                    time.ClockTime.DayOfWeek == DayOfWeek.Friday)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (time.Weekends == true && time.ClockTime.Hour == time.AlarmTime.Hour && time.ClockTime.Minute == time.AlarmTime.Minute && time.ClockTime.Second == time.AlarmTime.Second)
+            {
+                if (time.ClockTime.DayOfWeek == DayOfWeek.Saturday ||
+                    time.ClockTime.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
+            
+        }
+        public string StartTheAlarm(Time time)
+        {
+            
+            if (time.Weekdays == true || time.Weekends == true)
             {
                 return $"Wake up it is {time.ClockTime.DayOfWeek}"; 
             }

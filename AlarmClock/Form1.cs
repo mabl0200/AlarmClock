@@ -5,6 +5,7 @@ namespace AlarmClock
         public Form1()
         {
             InitializeComponent();
+            Alarm.Text = "";
             Alarm.Visible = false;
             SnzBtn.Visible = false;
             timer1.Start();
@@ -19,13 +20,15 @@ namespace AlarmClock
             ShowAlarmTime.Text = time.AlarmTime.ToString("HH:mm");
             TimeLbl.Text = time.ClockTime.ToString("HH:mm:ss");
             time.ClockTime.DayOfWeek.ToString();
+            bool TurnOnAlarm = time.CheckTime(time);
 
-            if (time.ClockTime.Hour == time.AlarmTime.Hour && time.ClockTime.Minute == time.AlarmTime.Minute && time.ClockTime.Second == time.AlarmTime.Second)
+            if (TurnOnAlarm)
             {
                 Alarm.Text = time.StartTheAlarm(time);
                 Alarm.Visible=true;
                 SnzBtn.Visible=true;
             }
+            
         }
 
         //Kan nog tas bort så kör vi på DateTime.Now
