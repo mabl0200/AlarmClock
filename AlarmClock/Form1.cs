@@ -2,16 +2,20 @@ namespace AlarmClock
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
             Alarm.Text = "";
             Alarm.Visible = false;
             SnzBtn.Visible = false;
+            stopBtn.Visible = false;
             timer1.Start();
+
         }
         Time time = new Time();
         PopUpText pop = new PopUpText("");
+        private bool run = true;
         private void timer1_Tick(object sender, EventArgs e)
         {
             time.ClockTime = DateTime.Now;
@@ -21,12 +25,17 @@ namespace AlarmClock
             time.ClockTime.DayOfWeek.ToString();
             bool TurnOnAlarm = time.CheckTime(time);
 
+
             if (TurnOnAlarm)
             {
+                
                 Alarm.Text = pop.message;
               //  Alarm.Text = time.StartTheAlarm(time);
                 Alarm.Visible=true;
                 SnzBtn.Visible=true;
+                stopBtn.Visible = true;
+                CheckIfAlarmGoesOf();
+
             }
             
         }
@@ -70,6 +79,14 @@ namespace AlarmClock
             Alarm.Visible = false;
             time.Snooze(time.ClockTime);
             SnzBtn.Visible = false;
+            run = false;
+        }
+        private void stopBtn_Click(object sender, EventArgs e)
+        {
+            Alarm.Visible = false;
+            SnzBtn.Visible = false;
+            stopBtn.Visible = false;
+            run = false;
         }
 
         private void WeekdayChBx_CheckedChanged(object sender, EventArgs e)
@@ -118,5 +135,30 @@ namespace AlarmClock
         {
 
         }
+
+        private void CheckIfAlarmGoesOf()
+        {
+            bool TurnOnAlarm = time.CheckTime(time);
+            if (TurnOnAlarm)
+                ThreadPool.QueueUserWorkItem(AlarmGoesOf);
+        }
+
+        private void AlarmGoesOf(object stateInfo)
+        {
+            run = true;
+            while (run)
+            {
+                GbAlarm.Invoke((MethodInvoker) (() => 
+                    GbAlarm.BackColor = Color.LightPink));
+                Thread.Sleep(250);
+                GbAlarm.Invoke((MethodInvoker)(() =>
+                    GbAlarm.BackColor = Color.RosyBrown));
+                Thread.Sleep(250);
+                
+
+            }
+        }
+
+        
     }
 }

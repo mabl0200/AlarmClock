@@ -9,6 +9,7 @@ namespace AlarmClock
         static void Main()
         {
             ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
             Application.Run(new Form1());
         }
     }
