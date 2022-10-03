@@ -7,6 +7,7 @@ namespace AlarmClock.Tests
     public class Tests
     {
         private Time _time;
+        private PopUpText _pop;
 
         [SetUp]
         public void Setup()
@@ -14,8 +15,16 @@ namespace AlarmClock.Tests
             DateTime clock = new DateTime(2022, 09, 29, 12, 40, 0);
             DateTime alarm = new DateTime(2022, 09, 29, 12, 45, 0);
             _time = new Time(clock, alarm);
+            _pop = new PopUpText("Test");
         }
 
+        [Test]
+        public void PopUpTest()
+        {
+            string test = "Test";
+            Assert.That(_pop.message, Is.EqualTo(test));
+
+        }
         [Test]
         public void WhenAlarmTimeSameAsClockTimeYouCanSnooze()
         {

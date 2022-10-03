@@ -65,19 +65,19 @@ namespace AlarmClock
             return false;
             
         }
-        public string StartTheAlarm(Time time)
-        {
+        //public string StartTheAlarm(Time time)
+        //{
             
-            if (time.Weekdays == true || time.Weekends == true)
-            {
-                return $"Wake up it is {time.ClockTime.DayOfWeek}"; 
-            }
-            else
-            {
-                return "Wake up";
-            }
+        //    if (time.Weekdays == true || time.Weekends == true)
+        //    {
+        //        return $"Wake up it is {time.ClockTime.DayOfWeek}"; 
+        //    }
+        //    else
+        //    {
+        //        return "Wake up";
+        //    }
 
-        }
+        //}
         public void Snooze(DateTime snz)
         {
             SetAlarm(snz.AddMinutes(1));
@@ -86,10 +86,10 @@ namespace AlarmClock
         {
             AlarmTime = alarm;
         }
-        public void SetClock(DateTime clock)
-        {
-            ClockTime = clock;
-        }
+        //public void SetClock(DateTime clock)
+        //{
+        //    ClockTime = clock;
+        //}
         public void SetDays(Time days)
         {
             if (days.Weekdays == true)

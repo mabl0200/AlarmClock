@@ -11,7 +11,7 @@ namespace AlarmClock
             timer1.Start();
         }
         Time time = new Time();
-
+        PopUpText pop = new PopUpText("");
         private void timer1_Tick(object sender, EventArgs e)
         {
             time.ClockTime = DateTime.Now;
@@ -23,7 +23,8 @@ namespace AlarmClock
 
             if (TurnOnAlarm)
             {
-                Alarm.Text = time.StartTheAlarm(time);
+                Alarm.Text = pop.message;
+              //  Alarm.Text = time.StartTheAlarm(time);
                 Alarm.Visible=true;
                 SnzBtn.Visible=true;
             }
@@ -106,6 +107,11 @@ namespace AlarmClock
             }
             //time.Weekends = true;
             //time.SetDays(time);
+        }
+
+        private void alarmTextBox_TextChanged(object sender, EventArgs e)
+        {
+            pop.PopUp(alarmTextBox.Text);
         }
     }
 }

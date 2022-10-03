@@ -42,6 +42,8 @@
             this.WeekdayChBx = new System.Windows.Forms.CheckBox();
             this.WeekendsChBx = new System.Windows.Forms.CheckBox();
             this.DayOfWeek = new System.Windows.Forms.Label();
+            this.alarmTextBox = new System.Windows.Forms.TextBox();
+            this.AlarmTextLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AlarmHourUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AlarmMinuteUpDown)).BeginInit();
             this.SuspendLayout();
@@ -174,11 +176,31 @@
             this.DayOfWeek.TabIndex = 19;
             this.DayOfWeek.Text = "DayOfWeek";
             // 
+            // alarmTextBox
+            // 
+            this.alarmTextBox.Location = new System.Drawing.Point(33, 183);
+            this.alarmTextBox.Multiline = true;
+            this.alarmTextBox.Name = "alarmTextBox";
+            this.alarmTextBox.Size = new System.Drawing.Size(162, 78);
+            this.alarmTextBox.TabIndex = 20;
+            this.alarmTextBox.TextChanged += new System.EventHandler(this.alarmTextBox_TextChanged);
+            // 
+            // AlarmTextLabel
+            // 
+            this.AlarmTextLabel.AutoSize = true;
+            this.AlarmTextLabel.Location = new System.Drawing.Point(33, 145);
+            this.AlarmTextLabel.Name = "AlarmTextLabel";
+            this.AlarmTextLabel.Size = new System.Drawing.Size(62, 15);
+            this.AlarmTextLabel.TabIndex = 21;
+            this.AlarmTextLabel.Text = "Alarm text";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.AlarmTextLabel);
+            this.Controls.Add(this.alarmTextBox);
             this.Controls.Add(this.DayOfWeek);
             this.Controls.Add(this.WeekendsChBx);
             this.Controls.Add(this.WeekdayChBx);
@@ -214,5 +236,7 @@
         private CheckBox WeekdayChBx;
         private CheckBox WeekendsChBx;
         private Label DayOfWeek;
+        private TextBox alarmTextBox;
+        private Label AlarmTextLabel;
     }
 }
