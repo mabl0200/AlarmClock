@@ -76,14 +76,18 @@ namespace AlarmClock
             if (WeekdayChBx.Checked == true)
             {
                 WeekendsChBx.Enabled = false;
+                time.Weekdays = true;
+                time.SetDays(time);
             }
             if (WeekdayChBx.Checked == false)
             {
                 WeekendsChBx.Enabled = true;
+                time.Weekdays = false;
+                time.SetDays(time);
             }
-            
-            time.Weekdays = true;
-            time.SetDays(time);
+
+            //time.Weekdays = true;
+            //time.SetDays(time);
         }
 
         private void WeekendsChBx_CheckedChanged(object sender, EventArgs e)
