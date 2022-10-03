@@ -113,5 +113,10 @@ namespace AlarmClock
         {
             pop.PopUp(alarmTextBox.Text);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

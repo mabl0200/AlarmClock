@@ -44,8 +44,10 @@
             this.DayOfWeek = new System.Windows.Forms.Label();
             this.alarmTextBox = new System.Windows.Forms.TextBox();
             this.AlarmTextLabel = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.AlarmHourUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AlarmMinuteUpDown)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -56,18 +58,21 @@
             // TimeLbl
             // 
             this.TimeLbl.AutoSize = true;
-            this.TimeLbl.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TimeLbl.Location = new System.Drawing.Point(272, 145);
+            this.TimeLbl.Font = new System.Drawing.Font("Digital dream Fat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TimeLbl.Location = new System.Drawing.Point(238, 114);
+            this.TimeLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.TimeLbl.Name = "TimeLbl";
-            this.TimeLbl.Size = new System.Drawing.Size(142, 65);
+            this.TimeLbl.Size = new System.Drawing.Size(666, 98);
             this.TimeLbl.TabIndex = 2;
-            this.TimeLbl.Text = "00:00";
+            this.TimeLbl.Text = "00:00:00";
             // 
             // SnzBtn
             // 
-            this.SnzBtn.Location = new System.Drawing.Point(303, 300);
+            this.SnzBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SnzBtn.Location = new System.Drawing.Point(433, 59);
+            this.SnzBtn.Margin = new System.Windows.Forms.Padding(6);
             this.SnzBtn.Name = "SnzBtn";
-            this.SnzBtn.Size = new System.Drawing.Size(75, 23);
+            this.SnzBtn.Size = new System.Drawing.Size(320, 44);
             this.SnzBtn.TabIndex = 5;
             this.SnzBtn.Text = "Snooze";
             this.SnzBtn.UseVisualStyleBackColor = true;
@@ -76,26 +81,32 @@
             // Alarm
             // 
             this.Alarm.AutoSize = true;
-            this.Alarm.Location = new System.Drawing.Point(312, 246);
+            this.Alarm.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Alarm.Location = new System.Drawing.Point(349, 159);
+            this.Alarm.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Alarm.Name = "Alarm";
-            this.Alarm.Size = new System.Drawing.Size(54, 15);
+            this.Alarm.Size = new System.Drawing.Size(129, 37);
             this.Alarm.TabIndex = 6;
             this.Alarm.Text = "Wake Up";
             // 
             // ShowAlarmTime
             // 
             this.ShowAlarmTime.AutoSize = true;
-            this.ShowAlarmTime.Location = new System.Drawing.Point(30, 35);
+            this.ShowAlarmTime.Font = new System.Drawing.Font("Digital dream Fat", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ShowAlarmTime.Location = new System.Drawing.Point(74, 59);
+            this.ShowAlarmTime.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.ShowAlarmTime.Name = "ShowAlarmTime";
-            this.ShowAlarmTime.Size = new System.Drawing.Size(65, 15);
+            this.ShowAlarmTime.Size = new System.Drawing.Size(334, 44);
             this.ShowAlarmTime.TabIndex = 8;
             this.ShowAlarmTime.Text = "AlarmTime";
             // 
             // SetAlarm
             // 
-            this.SetAlarm.Location = new System.Drawing.Point(420, 36);
+            this.SetAlarm.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SetAlarm.Location = new System.Drawing.Point(711, 272);
+            this.SetAlarm.Margin = new System.Windows.Forms.Padding(6);
             this.SetAlarm.Name = "SetAlarm";
-            this.SetAlarm.Size = new System.Drawing.Size(75, 23);
+            this.SetAlarm.Size = new System.Drawing.Size(273, 110);
             this.SetAlarm.TabIndex = 9;
             this.SetAlarm.Text = "Set Alarm";
             this.SetAlarm.UseVisualStyleBackColor = true;
@@ -103,54 +114,66 @@
             // 
             // AlarmHourUpDown
             // 
-            this.AlarmHourUpDown.Location = new System.Drawing.Point(282, 36);
+            this.AlarmHourUpDown.BackColor = System.Drawing.Color.RosyBrown;
+            this.AlarmHourUpDown.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AlarmHourUpDown.Location = new System.Drawing.Point(292, 272);
+            this.AlarmHourUpDown.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
             this.AlarmHourUpDown.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
             this.AlarmHourUpDown.Name = "AlarmHourUpDown";
-            this.AlarmHourUpDown.Size = new System.Drawing.Size(120, 23);
+            this.AlarmHourUpDown.Size = new System.Drawing.Size(153, 44);
             this.AlarmHourUpDown.TabIndex = 12;
             this.AlarmHourUpDown.ValueChanged += new System.EventHandler(this.AlarmHourUpDown_ValueChanged);
             // 
             // AlarmMinuteUpDown
             // 
-            this.AlarmMinuteUpDown.Location = new System.Drawing.Point(282, 65);
+            this.AlarmMinuteUpDown.BackColor = System.Drawing.Color.RosyBrown;
+            this.AlarmMinuteUpDown.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AlarmMinuteUpDown.Location = new System.Drawing.Point(292, 338);
+            this.AlarmMinuteUpDown.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
             this.AlarmMinuteUpDown.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.AlarmMinuteUpDown.Name = "AlarmMinuteUpDown";
-            this.AlarmMinuteUpDown.Size = new System.Drawing.Size(120, 23);
+            this.AlarmMinuteUpDown.Size = new System.Drawing.Size(153, 44);
             this.AlarmMinuteUpDown.TabIndex = 13;
             this.AlarmMinuteUpDown.ValueChanged += new System.EventHandler(this.AlarmMinuteUpDown_ValueChanged);
             // 
             // Hours
             // 
             this.Hours.AutoSize = true;
-            this.Hours.Location = new System.Drawing.Point(226, 36);
+            this.Hours.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Hours.Location = new System.Drawing.Point(158, 274);
+            this.Hours.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Hours.Name = "Hours";
-            this.Hours.Size = new System.Drawing.Size(39, 15);
+            this.Hours.Size = new System.Drawing.Size(93, 37);
             this.Hours.TabIndex = 14;
             this.Hours.Text = "Hours";
             // 
             // Minutes
             // 
             this.Minutes.AutoSize = true;
-            this.Minutes.Location = new System.Drawing.Point(226, 67);
+            this.Minutes.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Minutes.Location = new System.Drawing.Point(158, 340);
+            this.Minutes.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Minutes.Name = "Minutes";
-            this.Minutes.Size = new System.Drawing.Size(50, 15);
+            this.Minutes.Size = new System.Drawing.Size(117, 37);
             this.Minutes.TabIndex = 15;
             this.Minutes.Text = "Minutes";
             // 
             // WeekdayChBx
             // 
             this.WeekdayChBx.AutoSize = true;
-            this.WeekdayChBx.Location = new System.Drawing.Point(511, 35);
+            this.WeekdayChBx.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.WeekdayChBx.Location = new System.Drawing.Point(496, 272);
+            this.WeekdayChBx.Margin = new System.Windows.Forms.Padding(6);
             this.WeekdayChBx.Name = "WeekdayChBx";
-            this.WeekdayChBx.Size = new System.Drawing.Size(79, 19);
+            this.WeekdayChBx.Size = new System.Drawing.Size(180, 41);
             this.WeekdayChBx.TabIndex = 17;
             this.WeekdayChBx.Text = "Weekdays";
             this.WeekdayChBx.UseVisualStyleBackColor = true;
@@ -159,9 +182,11 @@
             // WeekendsChBx
             // 
             this.WeekendsChBx.AutoSize = true;
-            this.WeekendsChBx.Location = new System.Drawing.Point(510, 67);
+            this.WeekendsChBx.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.WeekendsChBx.Location = new System.Drawing.Point(494, 340);
+            this.WeekendsChBx.Margin = new System.Windows.Forms.Padding(6);
             this.WeekendsChBx.Name = "WeekendsChBx";
-            this.WeekendsChBx.Size = new System.Drawing.Size(80, 19);
+            this.WeekendsChBx.Size = new System.Drawing.Size(181, 41);
             this.WeekendsChBx.TabIndex = 18;
             this.WeekendsChBx.Text = "Weekends";
             this.WeekendsChBx.UseVisualStyleBackColor = true;
@@ -170,35 +195,57 @@
             // DayOfWeek
             // 
             this.DayOfWeek.AutoSize = true;
-            this.DayOfWeek.Location = new System.Drawing.Point(302, 123);
+            this.DayOfWeek.Font = new System.Drawing.Font("Digital dream Fat", 13.875F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.DayOfWeek.Location = new System.Drawing.Point(238, 61);
+            this.DayOfWeek.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.DayOfWeek.Name = "DayOfWeek";
-            this.DayOfWeek.Size = new System.Drawing.Size(69, 15);
+            this.DayOfWeek.Size = new System.Drawing.Size(287, 38);
             this.DayOfWeek.TabIndex = 19;
             this.DayOfWeek.Text = "DayOfWeek";
             // 
             // alarmTextBox
             // 
-            this.alarmTextBox.Location = new System.Drawing.Point(33, 183);
+            this.alarmTextBox.BackColor = System.Drawing.Color.RosyBrown;
+            this.alarmTextBox.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.alarmTextBox.Location = new System.Drawing.Point(316, 432);
+            this.alarmTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.alarmTextBox.Multiline = true;
             this.alarmTextBox.Name = "alarmTextBox";
-            this.alarmTextBox.Size = new System.Drawing.Size(162, 78);
+            this.alarmTextBox.Size = new System.Drawing.Size(668, 37);
             this.alarmTextBox.TabIndex = 20;
             this.alarmTextBox.TextChanged += new System.EventHandler(this.alarmTextBox_TextChanged);
             // 
             // AlarmTextLabel
             // 
             this.AlarmTextLabel.AutoSize = true;
-            this.AlarmTextLabel.Location = new System.Drawing.Point(33, 145);
+            this.AlarmTextLabel.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AlarmTextLabel.Location = new System.Drawing.Point(158, 432);
+            this.AlarmTextLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.AlarmTextLabel.Name = "AlarmTextLabel";
-            this.AlarmTextLabel.Size = new System.Drawing.Size(62, 15);
+            this.AlarmTextLabel.Size = new System.Drawing.Size(146, 37);
             this.AlarmTextLabel.TabIndex = 21;
             this.AlarmTextLabel.Text = "Alarm text";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Alarm);
+            this.groupBox1.Controls.Add(this.ShowAlarmTime);
+            this.groupBox1.Controls.Add(this.SnzBtn);
+            this.groupBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.Location = new System.Drawing.Point(158, 536);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(826, 293);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ALARM";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.RosyBrown;
+            this.ClientSize = new System.Drawing.Size(1142, 960);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.AlarmTextLabel);
             this.Controls.Add(this.alarmTextBox);
             this.Controls.Add(this.DayOfWeek);
@@ -209,14 +256,14 @@
             this.Controls.Add(this.AlarmMinuteUpDown);
             this.Controls.Add(this.AlarmHourUpDown);
             this.Controls.Add(this.SetAlarm);
-            this.Controls.Add(this.ShowAlarmTime);
-            this.Controls.Add(this.Alarm);
-            this.Controls.Add(this.SnzBtn);
             this.Controls.Add(this.TimeLbl);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.AlarmHourUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AlarmMinuteUpDown)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,5 +285,6 @@
         private Label DayOfWeek;
         private TextBox alarmTextBox;
         private Label AlarmTextLabel;
+        private GroupBox groupBox1;
     }
 }
