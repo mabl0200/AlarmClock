@@ -1,3 +1,5 @@
+using System.Media;
+
 namespace AlarmClock
 {
     public partial class Form1 : Form
@@ -150,6 +152,7 @@ namespace AlarmClock
 
         public void AlarmGoesOf(object stateInfo)
         {
+            SoundPlayer soundAlarm = new(soundLocation:"alarmsound.wav");
             run = true;
             while (run)
             {
@@ -159,11 +162,13 @@ namespace AlarmClock
                 GbAlarm.Invoke((MethodInvoker)(() =>
                     GbAlarm.BackColor = Color.RosyBrown));
                 Thread.Sleep(250);
-                
 
+                if (AlarmSound.Checked == true)
+                {
+                    soundAlarm.Play();
+                }
             }
+            soundAlarm.Stop();
         }
-
-        
     }
 }
