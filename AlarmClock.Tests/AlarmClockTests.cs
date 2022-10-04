@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using AlarmClock;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AlarmClock.Tests
 {
@@ -9,6 +10,7 @@ namespace AlarmClock.Tests
     {
         private Time _time;
         private PopUpText _pop;
+        private Form1 _form1;
 
         [SetUp]
         public void Setup()
@@ -17,6 +19,7 @@ namespace AlarmClock.Tests
             DateTime alarm = new DateTime(2022, 09, 29, 12, 45, 0);
             _time = new Time(clock, alarm);
             _pop = new PopUpText("Test");
+            _form1 = new Form1();
         }
 
         [Test]
@@ -55,5 +58,16 @@ namespace AlarmClock.Tests
             Assert.That(startAlarm, Is.True);
         }
 
+        [Test]
+        public void CheckFlashingWhenAlarmGoesOf()
+        {
+            var time = new Time
+            {
+                AlarmTime = new DateTime(2022, 10, 01, 08, 0, 0),
+                ClockTime = new DateTime(2022, 10, 01, 08, 0, 0)
+            };
+            bool check = _form1.CheckIfAlarmGoesOf(time);
+            Assert.That(check, Is.True);
+        }
     }
 }

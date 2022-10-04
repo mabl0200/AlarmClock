@@ -34,7 +34,7 @@ namespace AlarmClock
                 Alarm.Visible=true;
                 SnzBtn.Visible=true;
                 stopBtn.Visible = true;
-                CheckIfAlarmGoesOf();
+                CheckIfAlarmGoesOf(time);
 
             }
             
@@ -136,14 +136,19 @@ namespace AlarmClock
 
         }
 
-        private void CheckIfAlarmGoesOf()
+        public bool CheckIfAlarmGoesOf(Time _time)
         {
-            bool TurnOnAlarm = time.CheckTime(time);
+            bool TurnOnAlarm = time.CheckTime(_time);
             if (TurnOnAlarm)
+            {
                 ThreadPool.QueueUserWorkItem(AlarmGoesOf);
+                return true;
+            }
+            
+            return false;
         }
 
-        private void AlarmGoesOf(object stateInfo)
+        public void AlarmGoesOf(object stateInfo)
         {
             run = true;
             while (run)
