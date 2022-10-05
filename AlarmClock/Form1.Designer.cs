@@ -47,6 +47,7 @@
             this.GbAlarm = new System.Windows.Forms.GroupBox();
             this.stopBtn = new System.Windows.Forms.Button();
             this.AlarmSound = new System.Windows.Forms.CheckBox();
+            this.PresetAlarm = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.AlarmHourUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AlarmMinuteUpDown)).BeginInit();
             this.GbAlarm.SuspendLayout();
@@ -254,12 +255,25 @@
             this.AlarmSound.Text = "Sound";
             this.AlarmSound.UseVisualStyleBackColor = true;
             // 
+            // PresetAlarm
+            // 
+            this.PresetAlarm.AutoSize = true;
+            this.PresetAlarm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PresetAlarm.Location = new System.Drawing.Point(265, 99);
+            this.PresetAlarm.Name = "PresetAlarm";
+            this.PresetAlarm.Size = new System.Drawing.Size(131, 24);
+            this.PresetAlarm.TabIndex = 25;
+            this.PresetAlarm.Text = "Preset Alarm";
+            this.PresetAlarm.UseVisualStyleBackColor = true;
+            this.PresetAlarm.CheckedChanged += new System.EventHandler(this.PresetAlarm_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(615, 450);
+            this.Controls.Add(this.PresetAlarm);
             this.Controls.Add(this.AlarmSound);
             this.Controls.Add(this.GbAlarm);
             this.Controls.Add(this.AlarmTextLabel);
@@ -303,5 +317,6 @@
         private GroupBox GbAlarm;
         private Button stopBtn;
         private CheckBox AlarmSound;
+        private CheckBox PresetAlarm;
     }
 }
