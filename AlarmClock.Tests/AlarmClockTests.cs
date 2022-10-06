@@ -59,7 +59,7 @@ namespace AlarmClock.Tests
         }
 
         [Test]
-        public void CheckFlashingWhenAlarmGoesOf()
+        public void CheckSoundWhenAlarmGoesOff()
         {
             var time = new Time
             {

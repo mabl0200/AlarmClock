@@ -22,7 +22,7 @@ namespace AlarmClock
         {
             time.ClockTime = DateTime.Now;
             DayOfWeek.Text = time.ClockTime.DayOfWeek.ToString();
-            ShowAlarmTime.Text = time.AlarmTime.ToString("HH:mm");
+            ShowAlarmTime.Text = time.AlarmTime.ToString("HH:mm:ss");
             TimeLbl.Text = time.ClockTime.ToString("HH:mm:ss");
             time.ClockTime.DayOfWeek.ToString();
             bool TurnOnAlarm = time.CheckTime(time);
@@ -32,7 +32,6 @@ namespace AlarmClock
             {
                 
                 Alarm.Text = pop.message;
-              //  Alarm.Text = time.StartTheAlarm(time);
                 Alarm.Visible=true;
                 SnzBtn.Visible=true;
                 stopBtn.Visible = true;
