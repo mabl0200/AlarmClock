@@ -175,16 +175,14 @@ namespace AlarmClock
             if (PresetAlarm.Checked == true)
             {
                 DateTime changeTime = DateTime.Now;
-                changeTime = changeTime.AddDays(1);
-                DateTime alarm = new DateTime(2022, 10, changeTime.Day, 9, 14, 0);
-                time.SetAlarm(alarm);
+                DateTime alarm = new DateTime(changeTime.Year, changeTime.Month, changeTime.Day, 9, 14, 0);
+                time.PresetAlarm(alarm);
                 ShowAlarmTime.Visible = true;
             }
             if (PresetAlarm.Checked == false)
             {
                 ShowAlarmTime.Visible = false;
-                DateTime alarm = new DateTime(2022, 10, 04, 9, 14, 0);
-                time.SetAlarm(alarm);
+              
             }
         }
     }

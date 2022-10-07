@@ -87,8 +87,11 @@ namespace AlarmClock
                 days.Weekdays = false;
             }
         }
+      public void PresetAlarm(DateTime pre)
+        {
+            SetAlarm(pre);
+           
+        }
 
-        
-        
     }
 }

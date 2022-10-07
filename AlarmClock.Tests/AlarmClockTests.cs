@@ -36,7 +36,13 @@ namespace AlarmClock.Tests
             DateTime snzTime = new DateTime(2022, 09, 29, 12, 46, 0);
             Assert.That(_time.AlarmTime, Is.EqualTo(snzTime));
         }
-
+        [Test]
+        public void CheckPresetAlarm()
+        {
+            _time.PresetAlarm(_time.AlarmTime);
+            DateTime presetTime = _time.AlarmTime;
+            Assert.That(_time.AlarmTime, Is.EqualTo(presetTime));
+        }
         [Test]
         public void CheckSchedueldAlarmOnWeekdays()
         {
